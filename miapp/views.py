@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse,redirect
-from miapp.models import Libro
+from miapp.models import Libro,Autor
 
 def inicio(request):
     return render(request,'inicio.html',{
@@ -11,10 +11,22 @@ def listar_libro(request):
     libros = Libro.objects.all()    
     return render(request,'libro.html',{
         'libros': libros,
-        'titulo': 'libros'
+        'titulo': 'Listado de libros'
     })
 
 def eliminar_libro(request, id):
     libro = Libro.objects.get(pk=id)
     libro.delete()
     return redirect('listar_libro')
+
+def listar_autor(request):
+    autores = Autor.objects.all()    
+    return render(request,'autores.html',{
+        'autores': autores,
+        'titulo': 'Listado de autores'
+    })
+
+def eliminar_autor(request, id):
+    autor = Autor.objects.get(pk=id)
+    autor.delete()
+    return redirect('listar_autor')
