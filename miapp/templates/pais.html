@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block title %}
+    {{titulo}}
+{% endblock%}
+
+{% block content %}
+    <h1 class="title">{{titulo}}</h1>
+    <ul>
+        
+          <table class="table table-hover">
+    <thead>
+        <tr>
+        <th scope="col">Número</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Estado</th>
+        </tr>
+
+    </thead>
+    <tbody>
+    {% for pais in paises %}
+        <tr>
+        <th scope="row">{{pais.idpais}}</th>
+        <td>{{pais.nombre}}</td>
+        <td>{{pais.estado}}</td>
+         <td><a href="{% url 'eliminar_pais' id=pais.idpais %}">Eliminar</td>
+        </tr>
+        {% endfor %}
+  </tbody>
+</table>
+        
+    </ul>
+{% endblock %}
+
+

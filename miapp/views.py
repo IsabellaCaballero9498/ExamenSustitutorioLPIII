@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse,redirect
-from miapp.models import Libro,Autor,Editorial
+from miapp.models import Libro,Autor,Editorial,Pais
 
 def inicio(request):
     return render(request,'inicio.html',{
@@ -43,3 +43,16 @@ def eliminar_editorial(request, id):
     editorial = Editorial.objects.get(pk=id)
     editorial.delete()
     return redirect('listar_editorial')
+
+
+def listar_pais(request):
+    paises = Pais.objects.all()    
+    return render(request,'pais.html',{
+        'paises': paises,
+        'titulo': 'Listado de paises'
+    })
+
+def eliminar_pais(request, id):
+    pais = Pais.objects.get(pk=id)
+    pais.delete()
+    return redirect('listar_pais')

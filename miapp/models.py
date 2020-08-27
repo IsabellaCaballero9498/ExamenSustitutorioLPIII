@@ -22,4 +22,7 @@ class Editorial(models.Model):
     nombre = models.CharField(max_length=100)
     estado= models.CharField(max_length=1)
 
-
+class Pais(models.Model):
+    idpais = models.IntegerField()
+    nombre = models.CharField(max_length=100)
+    estado= models.CharField(max_length=1)
