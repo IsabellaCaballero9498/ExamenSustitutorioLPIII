@@ -56,3 +56,9 @@ def eliminar_pais(request, id):
     pais = Pais.objects.get(pk=id)
     pais.delete()
     return redirect('listar_pais')
+
+def consultas(request):
+    return render(request,'consultas.html',{
+        'titulo': 'Consultas y comentarios',
+    })
+

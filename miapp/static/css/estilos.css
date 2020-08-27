@@ -2,22 +2,13 @@
 *{
     margin: 8px;
     padding: 0px;
-    box-sizing: border-box;
     font-family: sans-serif;
     text-decoration: none;
 }
 body{
     background: linear-gradient(to right, #e7ebec);
 }
-.box p, .box h2, .box h3, .box ul{
-    margin-top:5px;
-    margin-bottom:5px;
-}
 
-.box ul, .box ol{
-    margin-left:20px;
-    margin-bottom:10px;
-}
 /*Estilos Cabecera*/
 .card-header{
     width: 100%;
@@ -39,7 +30,3 @@ footer{
     margin: 0 auto;
 }
 
-h2{
-    text-align: center;
-    margin-inline: 10px;
-}
