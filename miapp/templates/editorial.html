@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block title %}
+    {{titulo}}
+{% endblock%}
+
+{% block content %}
+    <h1 class="title">{{titulo}}</h1>
+    <ul>
+        
+          <table class="table table-hover">
+    <thead>
+        <tr>
+        <th scope="col">Número</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Estado</th>
+        </tr>
+
+
+
+    </thead>
+    <tbody>
+    {% for editorial in editoriales %}
+        <tr>
+        <th scope="row">{{editorial.ideditorial}}</th>
+        <td>{{editorial.nombre}}</td>
+        <td>{{editorial.estado}}</td>
+         <td><a href="{% url 'eliminar_editorial' id=editorial.ideditorial %}">Eliminar</td>
+        </tr>
+        {% endfor %}
+  </tbody>
+</table>
+        
+    </ul>
+{% endblock %}
+
+

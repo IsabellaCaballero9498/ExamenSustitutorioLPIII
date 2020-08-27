@@ -16,3 +16,10 @@ class Autor(models.Model):
     dni = models.CharField(max_length=8)
     estado= models.CharField(max_length=1)
 
+
+class Editorial(models.Model):
+    ideditorial = models.IntegerField()
+    nombre = models.CharField(max_length=100)
+    estado= models.CharField(max_length=1)
+
+
